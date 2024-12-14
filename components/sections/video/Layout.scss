@@ -1,0 +1,133 @@
+.layout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; // Ensure the layout fills the viewport
+  background-color: #ffffff;
+  margin: 0 50px;
+  gap: 20px;
+}
+.layout-tour {
+  font-family: var(--font-Yesteryear);
+  font-size: 2.5rem;
+  color: rgb(250, 66, 66);
+  margin-top: -1rem;
+}
+.image-container {
+  position: relative;
+  width: 50vw;
+  height: 70vh;
+  border-radius: 8px;
+  overflow: hidden; // Ensures the image doesn't exceed its container
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .video-icon {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 100%;
+      background: #ffffff;
+      padding: 20px;
+      color: rgb(255, 102, 0);
+    }
+  }
+}
+.image-container:hover .video-icon {
+  color: black; /* Change color to black on hover */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // Ensures the image fills the container while maintaining its aspect ratio
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff; // White text
+  text-align: center;
+  z-index: 1;
+}
+
+.overlay-text h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.overlay-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.layout-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh; // Ensures the container takes up full viewport height
+}
+
+.content {
+  //   flex: 1;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left; // Align text to the left
+  padding-right: 20px; // Space between text and image
+}
+.layout-btn {
+  background-color: rgb(255, 81, 0);
+  color: white;
+  border: 1px solid;
+  width: 10rem;
+  padding: 10px 0;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  letter-spacing: 0.2rem;
+
+  &:hover {
+    color: rgb(255, 81, 0);
+    background-color: white;
+    border-color: rgb(255, 81, 0);
+    border: 1px solid;
+  }
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.image-container {
+  flex: 0 0 42vw; // Minimum width of 50vh for the image
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

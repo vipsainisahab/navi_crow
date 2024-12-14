@@ -1,0 +1,135 @@
+.card-carousel-card {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  margin-top: 10rem;
+  overflow: hidden;
+
+  .marquee {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 10px;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+
+    .card {
+      background: #ffffff;
+      width: 350px;
+      padding: 20px 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px); /* Slight upward movement */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-top {
+        .card-start-popup {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap; /* Handle content wrapping on small screens */
+
+          .card-star {
+            .stars {
+              color: #ffd700;
+              font-size: 20px;
+              margin-bottom: 10px;
+              text-align: start;
+            }
+
+            h5 {
+              font-size: 20px; /* Adjust font size for better scaling */
+              font-weight: bold;
+              color: #333;
+              margin: 10px 0;
+              text-align: start;
+            }
+          }
+
+          .card-cots {
+            font-size: 50px; /* Scale down font size for smaller screens */
+            margin-top: 20px;
+          }
+        }
+
+        p {
+          font-size: 12px; /* Smaller font size for mobile */
+          color: #7a89af;
+          margin: 10px 0;
+          text-align: start;
+        }
+      }
+
+      .card-bottom {
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 1.5rem;
+        margin-top: 15px;
+
+        .user-image {
+          width: 50px; /* Adjust size for smaller screens */
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .user-name {
+          font-size: 14px; /* Smaller font size for smaller devices */
+          font-weight: bold;
+          display: flex;
+          align-items: start;
+          flex-direction: column;
+
+          p {
+            color: #a39f9f;
+          }
+
+          span {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .card-carousel-card {
+    padding: 10px 15px;
+    margin-top: 5rem;
+
+    .marquee {
+      gap: 10px;
+
+      .card {
+        width: 100%; /* Cards take full width on smaller devices */
+        padding: 15px 20px;
+
+        .card-top .card-start-popup .card-cots {
+          font-size: 40px; /* Further adjust font size */
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .card-carousel-card {
+    padding: 10px;
+
+    .marquee .card {
+      padding: 10px 15px;
+
+      .card-top .card-start-popup .card-star h5 {
+        font-size: 18px; /* Smaller headings for mobile */
+      }
+
+      .card-bottom .user-name {
+        font-size: 12px; /* Adjust user name font size */
+      }
+    }
+  }
+}

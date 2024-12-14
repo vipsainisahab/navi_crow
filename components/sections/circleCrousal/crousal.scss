@@ -1,0 +1,234 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+
+    &.scale-animation {
+      animation: scaleIn 1s ease-in-out;
+    }
+  }
+
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    flex: 1 0 calc(33.33% - 1rem); /* Default: 3 items per row */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+
+    .carousel__image-wrapper {
+      position: relative;
+      display: inline-block;
+
+      .rotating-text {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: #ff5a18;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 100%;
+        width: 80px;
+        height: 80px;
+        font-weight: bolder;
+        line-height: 30px;
+        font-size: 14px;
+        animation: rotateText 10s linear infinite;
+        z-index: 2;
+        margin-top: 1rem;
+      }
+
+      img {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        object-fit: cover;
+      }
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+      color: #ff5a18;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    button {
+      background-color: transparent;
+      color: black;
+      border: 1px solid;
+      font-family: "Courier New", Courier, monospace;
+      padding: 5px 20px;
+      word-spacing: 0.5rem;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 20;
+    color: #333;
+    padding: 20px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    letter-spacing: 0.1rem;
+  }
+
+  .carousel__button.left {
+    left: 50px;
+  }
+
+  .carousel__button.right {
+    right: 50px;
+  }
+
+  .carousel__button:hover {
+    background: none;
+    color: #333;
+  }
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.button-cousal {
+  letter-spacing: 0.3rem;
+  border-radius: 10rem;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .carousel__content {
+    gap: 3rem; /* Reduce gap between items */
+  }
+
+  .carousel__item {
+    flex: 1 0 calc(50% - 1rem); /* Show 2 items per row on tablets */
+    img {
+      width: 180px; /* Smaller image size for tablets */
+      height: 180px;
+    }
+
+    h3 {
+      font-size: 1rem; /* Adjust heading size */
+    }
+
+    p {
+      font-size: 0.9rem; /* Adjust paragraph size */
+    }
+  }
+
+  .carousel__button {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .carousel__button.left {
+    left: 30px;
+  }
+
+  .carousel__button.right {
+    right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel__item {
+    flex: 1 0 100%; /* Show 1 item per row on small devices */
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .carousel__button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel__item {
+    img {
+      width: 120px;
+      height: 120px;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    button {
+      padding: 5px 10px; /* Reduce padding for smaller buttons */
+      font-size: 0.8rem;
+    }
+  }
+
+  .carousel__button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .carousel__button.left {
+    left: 20px;
+  }
+
+  .carousel__button.right {
+    right: 20px;
+  }
+}
